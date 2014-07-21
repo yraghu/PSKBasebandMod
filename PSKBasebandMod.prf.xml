@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
+<properties>
+  <simple id="levels" mode="readwrite" type="ushort" complex="false">
+    <description>the level of modulation. 
+2 = binary PSK
+4 = QPSK
+</description>
+    <value>4</value>
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simple>
+  <simple id="generate" mode="readwrite" type="boolean" complex="false">
+    <description>When enabled, this component will ignore the incoming data and generate its own random symbols to modulate</description>
+    <value>true</value>
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simple>
+  <simple id="packet_size" mode="readwrite" type="ulong" complex="false">
+    <description>When generate is enabled, the size of the packet it should randomly generate.</description>
+    <value>1000</value>
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simple>
+  <simple id="stream_id" mode="readwrite" type="string">
+    <value>PSKBasebandMod Stream</value>
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simple>
+  <simple id="xdelta" mode="readwrite" type="double" complex="false">
+    <description>The time in seconds between each sample
+xdelta = 1/samplerate</description>
+    <value>1.0</value>
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simple>
+  <simple id="oversample_num" mode="readwrite" type="ushort" complex="false">
+    <description>When generating random data, this will create multiple copies of the randomly generated data to keep.
+ex. oversample_num = 4
+This will create 4 copies of the randomly generated data</description>
+    <value>4</value>
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simple>
+</properties>
